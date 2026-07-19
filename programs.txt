@@ -1,0 +1,1 @@
+program.exe=22h00m;08h00m
