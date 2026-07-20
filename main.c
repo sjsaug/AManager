@@ -78,6 +78,17 @@ void free_table(HASHTABLE *ht){
     free(ht);
 }
 
+void print_table(HASHTABLE *ht){
+    for (int i=0;i<TABLE_SIZE;i++){
+        NODE *current=ht->buckets[i];
+        while(current!=NULL){
+            printf("%s : Blocked from %02d:%02d until %02d:%02d\n", 
+       current->program_name, current->disable_hour, current->disable_min, current->enable_hour, current->enable_min);
+       current=current->next;
+        }
+    }
+}
+
 void enum_procs(){
 
 }
@@ -97,5 +108,7 @@ int main(){
         sscanf(disable_str, "%dh%dm", &dis_h, &dis_m);
         update_table(ht, name, line, en_h, en_m, dis_h, dis_m);
     }
+    print_table(ht);
+    free_table(ht);
     fclose(programs);
 }

@@ -1,1 +1,3 @@
 program.exe=22h00m;08h00m
+program2.exe=21h00m;07h11m
+program3.exe=01h01m;10h14m
