@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <windows.h>
+#include <tlhelp32.h>
 
 #define NAME_LEN 64
 #define LINE_LEN 256
